@@ -1,8 +1,6 @@
 function UserInfo({ user, isUser }) {
   return (
-    <div>
-      <h1>{user.display_name}</h1>
-      <h1>{user?.followers?.total}</h1>
+    <div className="d-flex flex-column align-items-center">
       <img
         src={
           isUser !== false && user?.images.length > 0
@@ -10,7 +8,11 @@ function UserInfo({ user, isUser }) {
             : "../src/assets/user.png"
         }
         alt=""
+        className="img-fluid"
+        width="100px"
+        height="auto"
       />
+      <h4>{user.display_name}</h4>
     </div>
   );
 }

@@ -43,9 +43,48 @@ function ProfilePage() {
 
   return (
     <>
-      {user ? <UserInfo user={user} isUser={isUser} /> : <h1>Error</h1>}
-      {topItems ? <TopItemsInfo topItems={topItems} /> : <h1>ERROR</h1>}
-      {recentTrack ? <RecentPlayedTrack recentTrack={recentTrack} /> : <h1>ERROR</h1>}
+      <div className="container">
+        <div className="d-flex justify-content-between mt-4">
+          <div className="d-flex align-items-center">
+            <img
+              src="../src/assets/spotify.png"
+              className="img-fluid"
+              alt=""
+              width="100px"
+              height="auto"
+            />
+          </div>
+          <div className="d-flex align-items-center gap-2">
+            <p>WIDOWAVE</p>
+            <img
+              src="../src/assets/widowave.png"
+              className="img-fluid"
+              alt=""
+              width="50px"
+              height="auto"
+            />
+          </div>
+        </div>
+        <div className="container mt-4">
+          <div className="row align-items-center">
+            <div className="col">
+              {user ? <UserInfo user={user} isUser={isUser} /> : <h1>Error</h1>}
+            </div>
+            <div className="col">
+              {recentTrack ? (
+                <RecentPlayedTrack recentTrack={recentTrack} />
+              ) : (
+                <h1>ERROR</h1>
+              )}
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              {topItems ? <TopItemsInfo topItems={topItems} /> : <h1>ERROR</h1>}
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

@@ -1,5 +1,5 @@
-import TaskItem from "./TaskItem";
 import { useState, useEffect } from "react";
+import TrackItem from "./TrackItem";
 
 function TopItemsInfo({ topItems }) {
   const [currentMonth, setCurrentMonth] = useState("");
@@ -7,27 +7,27 @@ function TopItemsInfo({ topItems }) {
   useEffect(() => {
     const currentDate = new Date();
     const months = [
-      "Enero",
-      "Febrero",
-      "Marzo",
-      "Abril",
-      "Mayo",
-      "Junio",
-      "Julio",
-      "Agosto",
-      "Septiembre",
-      "Octubre",
-      "Noviembre",
-      "Diciembre",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
     ];
     const monthName = months[currentDate.getMonth()];
     setCurrentMonth(monthName);
   }, []);
   return (
-    <div>
-      <h1>Top 5 Canciones de {currentMonth}</h1>
+    <div className="mt-4">
+      <h1 className="text-center"> Top 5 Songs of {currentMonth}</h1>
       {topItems.map((item) => (
-        <TaskItem key={item.id} item={item} />
+        <TrackItem key={item.id} item={item} />
       ))}
     </div>
   );
