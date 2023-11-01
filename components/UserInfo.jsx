@@ -1,6 +1,7 @@
 function UserInfo({ user, isUser }) {
   return (
-    <div className="d-flex flex-column align-items-center">
+    <div className="d-flex flex-column align-items-center gap-2 p-3 h-100 rounded-4">
+       <h2 className="text-center">Welcome</h2>
       <img
         src={
           isUser !== false && user?.images.length > 0
@@ -9,10 +10,10 @@ function UserInfo({ user, isUser }) {
         }
         alt=""
         className="img-fluid"
-        width="100px"
+        width="150px"
         height="auto"
       />
-      <h4>{user.display_name}</h4>
+      <p>{user.display_name}</p>
     </div>
   );
 }

@@ -5,11 +5,9 @@ import ProfilePage from "../pages/ProfilePage";
 function App() {
   return (
     <BrowserRouter>
-      <div>
-        <Routes>
-          <Route path="/" element={<ProfilePage />}></Route>
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<ProfilePage />}></Route>
+      </Routes>
     </BrowserRouter>
   );
 }

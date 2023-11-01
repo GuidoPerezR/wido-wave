@@ -9,7 +9,7 @@ import TopItemsInfo from "../components/TopItemsInfo";
 import RecentPlayedTrack from "../components/RecentPlayedTrack";
 
 function ProfilePage() {
-  const clientId = "5e4fbd8d56b942fbbee3343fa5c3c00c"; // Reemplaza con tu ID de cliente
+  const clientId = import.meta.env.VITE_CLIENT_ID; // Reemplaza con tu ID de cliente
   const params = new URLSearchParams(window.location.search);
   const code = params.get("code");
 
@@ -43,45 +43,43 @@ function ProfilePage() {
 
   return (
     <>
-      <div className="container">
-        <div className="d-flex justify-content-between mt-4">
-          <div className="d-flex align-items-center">
-            <img
-              src="../src/assets/spotify.png"
-              className="img-fluid"
-              alt=""
-              width="100px"
-              height="auto"
-            />
+      <div className="d-flex justify-content-between bg-black py-2 px-4">
+        <div className="d-flex align-items-center">
+          <img
+            src="../src/assets/spotify.png"
+            className="img-fluid"
+            alt=""
+            width="100px"
+            height="auto"
+          />
+        </div>
+        <div className="d-flex align-items-center gap-2">
+          <p>WIDOWAVE</p>
+          <img
+            src="../src/assets/widowave.png"
+            className="img-fluid"
+            alt=""
+            width="50px"
+            height="auto"
+          />
+        </div>
+      </div>
+      <div className="container d-flex justify-content-center align-items-center flex-column">
+        <div className="row ">
+          <div className="col">
+            {user ? <UserInfo user={user} isUser={isUser} /> : <h1>No info</h1>}
           </div>
-          <div className="d-flex align-items-center gap-2">
-            <p>WIDOWAVE</p>
-            <img
-              src="../src/assets/widowave.png"
-              className="img-fluid"
-              alt=""
-              width="50px"
-              height="auto"
-            />
+          <div className="col">
+            {recentTrack ? (
+              <RecentPlayedTrack recentTrack={recentTrack} />
+            ) : (
+              <h1>No info</h1>
+            )}
           </div>
         </div>
-        <div className="container mt-4">
-          <div className="row align-items-center">
-            <div className="col">
-              {user ? <UserInfo user={user} isUser={isUser} /> : <h1>Error</h1>}
-            </div>
-            <div className="col">
-              {recentTrack ? (
-                <RecentPlayedTrack recentTrack={recentTrack} />
-              ) : (
-                <h1>ERROR</h1>
-              )}
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              {topItems ? <TopItemsInfo topItems={topItems} /> : <h1>ERROR</h1>}
-            </div>
+        <div className="row">
+          <div className="col">
+            {topItems ? <TopItemsInfo topItems={topItems} /> : <h1>No info</h1>}
           </div>
         </div>
       </div>
