@@ -8,6 +8,9 @@ import UserInfo from "../components/UserInfo";
 import TopItemsInfo from "../components/TopItemsInfo";
 import RecentPlayedTrack from "../components/RecentPlayedTrack";
 
+import spotifyLogo from "/spotify.png";
+import widowaveLogo from "/widowave.png";
+
 function ProfilePage() {
   const clientId = import.meta.env.VITE_CLIENT_ID; // Reemplaza con tu ID de cliente
   const params = new URLSearchParams(window.location.search);
@@ -46,7 +49,7 @@ function ProfilePage() {
       <div className="d-flex justify-content-between bg-black py-2 px-4">
         <div className="d-flex align-items-center">
           <img
-            src="../src/assets/spotify.png"
+            src={spotifyLogo}
             className="img-fluid"
             alt=""
             width="100px"
@@ -56,7 +59,7 @@ function ProfilePage() {
         <div className="d-flex align-items-center gap-2">
           <p>WIDOWAVE</p>
           <img
-            src="../src/assets/widowave.png"
+            src={widowaveLogo}
             className="img-fluid"
             alt=""
             width="50px"

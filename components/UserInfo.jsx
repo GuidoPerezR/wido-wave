@@ -1,12 +1,14 @@
+import notUserImage from "/user.png";
+
 function UserInfo({ user, isUser }) {
   return (
     <div className="d-flex flex-column align-items-center gap-2 p-3 h-100 rounded-4">
-       <h2 className="text-center">Welcome</h2>
+      <h2 className="text-center">Welcome</h2>
       <img
         src={
           isUser !== false && user?.images.length > 0
             ? user?.images[1].url
-            : "../src/assets/user.png"
+            : notUserImage
         }
         alt=""
         className="img-fluid"
